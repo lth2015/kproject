@@ -240,7 +240,7 @@ openssl req -new -sha256 -key etcd-peer.key -subj "/CN=etcd-peer" \
                  -CAcreateserial -out etcd-peer.crt -days 3650 \
                  -extensions v3_req_etcd -extfile ./openssl.cnf
 ```
-![image](https://github.com/jmjyw/kproject/tree/master/image/pki.png)
+![avatar](https://github.com/jmjyw/kproject/tree/master/image/pki.png)
 
 5. transfer certs to all nodes(包括master,worker和etcd节点)
 
