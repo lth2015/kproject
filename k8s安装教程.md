@@ -241,6 +241,7 @@ openssl req -new -sha256 -key etcd-peer.key -subj "/CN=etcd-peer" \
                  -extensions v3_req_etcd -extfile ./openssl.cnf
 ```
 ![image](https://github.com/jmjyw/kproject/tree/master/image/pki.png)
+
 5. transfer certs to all nodes(包括master,worker和etcd节点)
 
 在集群所有节点创建同样目录/etc/kubernetes，将当前pki目录拷贝到所有节点的/etc/kubernetes下
