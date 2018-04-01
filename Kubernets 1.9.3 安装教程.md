@@ -240,7 +240,7 @@ openssl req -new -sha256 -key etcd-peer.key -subj "/CN=etcd-peer" \
                  -CAcreateserial -out etcd-peer.crt -days 3650 \
                  -extensions v3_req_etcd -extfile ./openssl.cnf
 ```
-![](../image/pki.png)
+![](image/pki.png)
 
 5. transfer certs to all nodes(包括master,worker和etcd节点)
 
@@ -451,7 +451,7 @@ etcdctl \
   --key-file=/etc/kubernetes/pki/etcd.key \
   cluster-health
 ```
-![](../image/ectdhealthy.png)
+![](image/ectdhealthy.png)
 ```
 etcdctl \
   --ca-file=/etc/kubernetes/pki/etcd-ca.crt \
@@ -459,7 +459,7 @@ etcdctl \
   --key-file=/etc/kubernetes/pki/etcd.key \
   member list
 ```
-![](../image/etcdmember.png)
+![](image/etcdmember.png)
 
 8. register flannel backend network
 
@@ -550,7 +550,7 @@ systemctl enable kube-apiserver
 systemctl start kube-apiserver
 systemctl status kube-apiserver -l
 ```
-![](../image/apiserverstatus.png)
+![](image/apiserverstatus.png)
 
 10. controller manager配置
 * vim /usr/lib/systemd/system/kube-controller-manager.service
@@ -592,7 +592,7 @@ systemctl enable kube-controller-manager
 systemctl start kube-controller-manager
 systemctl status kube-controller-manager -l
 ```
-![](../image/controllermanagerstatus.png)
+![](image/controllermanagerstatus.png)
 
 11. scheduler配置
 * vim /usr/lib/systemd/system/kube-scheduler.service 
@@ -624,7 +624,7 @@ systemctl enable kube-scheduler
 systemctl start kube-scheduler
 systemctl status kube-scheduler -l
 ```
-![](../image/schedulerstatus.png)
+![](image/schedulerstatus.png)
 
 12. check component status
 
@@ -633,7 +633,7 @@ export KUBECONFIG=/etc/kubernetes/admin.kubeconfig
 kubectl version
 kubectl get componentstatuses
 ```
-![](../image/componentstatus.png)
+![](image/componentstatus.png)
 
 13. bootstrap相关配置
 
@@ -905,7 +905,7 @@ systemctl enable kubelet
 systemctl start kubelet
 systemctl status kubelet -l
 ```
-![](../image/kubeletstatus.png)
+![](image/kubeletstatus.png)
 
 6. kube-proxy安装
 
@@ -996,14 +996,14 @@ systemctl enable kube-proxy
 systemctl start kube-proxy
 systemctl status kube-proxy -l
 ```
-![](../image/kubeproxystatus.png)
+![](image/kubeproxystatus.png)
 
 7. 健康检查
 * cluster/validate-cluster.sh
 ```
 KUBECTL_PATH=$(which kubectl) NUM_NODES=3 KUBERNETES_PROVIDER=local cluster/validate-cluster.sh
 ```
-![](../image/clustervalidate.png)
+![](image/clustervalidate.png)
 
 
 --------------至此，安装教程结束--------------
